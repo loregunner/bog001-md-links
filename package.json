@@ -27,9 +27,12 @@
   "homepage": "https://github.com/loregunner/bog001-md-links#readme",
   "dependencies": {
     "axios": "^0.20.0",
+    "bluebird": "^3.7.2",
     "cheerio": "^1.0.0-rc.3",
+    "got": "^11.7.0",
     "jsdom": "^16.4.0",
     "markdown-it": "^11.0.1",
-    "marked": "^1.2.0"
+    "marked": "^1.2.0",
+    "node-fetch": "^2.6.1"
   }
 }
