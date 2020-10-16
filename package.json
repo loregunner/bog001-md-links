@@ -21,6 +21,9 @@
   ],
   "author": "lorena rippe",
   "license": "MIT",
+  "bin": {
+    "mdLinks": "./cli.js"
+  },
   "bugs": {
     "url": "https://github.com/loregunner/bog001-md-links/issues"
   },
