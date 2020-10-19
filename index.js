@@ -24,32 +24,27 @@ const objetoLinks = (data, rutaOriginal) => {
   })
   return arrayLinks
   }
-
-
-
-
-
-  
   
   // mi funcion principal con mis rutas 
-const mdLinks = (archivoPath,options = 0) => {
-const rutasArray = leerDirectorio(archivoPath);
-const arrayObjetosLinks = rutasArray.map((ruta) =>{
-rutaAbsolutaDeMisArchivos = path.resolve(ruta)
-  console.log(rutaAbsolutaDeMisArchivos);
-return fsPromises.readFile(rutaAbsolutaDeMisArchivos, 'utf8',)
+const mdLinks = (archivoPath) => {
+const pruebaRuta = path.resolve(archivoPath)
+//const rutasArray = leerDirectorio(archivoPath);
+//const arrayObjetosLinks = rutasArray.map((ruta) =>{
+//rutaAbsolutaDeMisArchivos = path.resolve(ruta)
+  //console.log(rutaAbsolutaDeMisArchivos);
+ return fsPromises.readFile(pruebaRuta, 'utf8',)
 .then(function(result) { 
- let linksObjeto = objetoLinks(result,rutaAbsolutaDeMisArchivos); 
+ let linksObjeto = objetoLinks(result,pruebaRuta); 
  return linksObjeto
 })
 .catch(function(error) { 
   console.log(error.message); 
 })
-})
-return Promise.all(arrayObjetosLinks).then(results => {
-  return results.flat()
-})
+//})
 };
+/*return Promise.all(pruebaRuta).then(results => {
+  return results.flat()
+})*/
 
 
 
@@ -61,7 +56,7 @@ return Promise.all(arrayObjetosLinks).then(results => {
 
 
 
-/*mdLinks('ArchivosMD').then((result) =>{
+/*mdLinks('README.md').then((result) =>{
 return validatelink(result);
 })                   
 .then((result) => {

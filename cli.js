@@ -6,7 +6,7 @@ const process = require('process');
 
 let options = process.argv
 let archivoPath = process.argv[2];
-const validateBroken = true;
+let validateBroken = true;
 let validate = false; 
 let stats = false
 //itero en options y las dos opciones les devulvo un valor boolean
