@@ -27,24 +27,25 @@ const objetoLinks = (data, rutaOriginal) => {
   
   // mi funcion principal con mis rutas 
 const mdLinks = (archivoPath) => {
-const pruebaRuta = path.resolve(archivoPath)
-//const rutasArray = leerDirectorio(archivoPath);
-//const arrayObjetosLinks = rutasArray.map((ruta) =>{
-//rutaAbsolutaDeMisArchivos = path.resolve(ruta)
-  //console.log(rutaAbsolutaDeMisArchivos);
- return fsPromises.readFile(pruebaRuta, 'utf8',)
+//const pruebaRuta = path.resolve(archivoPath)
+const rutasArray = leerDirectorio(archivoPath);
+const arrayObjetosLinks = rutasArray.map((ruta) =>{
+rutaAbsolutaDeMisArchivos = path.resolve(ruta)
+  console.log(rutaAbsolutaDeMisArchivos);
+ return fsPromises.readFile(rutaAbsolutaDeMisArchivos, 'utf8',)
 .then(function(result) { 
- let linksObjeto = objetoLinks(result,pruebaRuta); 
+ let linksObjeto = objetoLinks(result,rutaAbsolutaDeMisArchivos); 
  return linksObjeto
 })
 .catch(function(error) { 
   console.log(error.message); 
 })
-//})
-};
-/*return Promise.all(pruebaRuta).then(results => {
+})
+return Promise.all(arrayObjetosLinks).then(results => {
   return results.flat()
-})*/
+})
+};
+
 
 
 
